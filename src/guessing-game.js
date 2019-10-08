@@ -1,13 +1,13 @@
 class GuessingGame {
-    constructor() {}
-    debugger;
+    constructor() { }
+
     setRange(min, max) {
         this.min = min;
         this.max = max;
     }
 
     guess() {
-        return Math.floor(this.max/2) + Math.floor((this.min+1)/2);
+        return Math.round(this.min + (this.max - this.min) / 2);
     }
 
     lower() {
@@ -15,7 +15,7 @@ class GuessingGame {
     }
 
     greater() {
-        this.min = this.guess()+1;
+        this.min = this.guess();
     }
 }
 
